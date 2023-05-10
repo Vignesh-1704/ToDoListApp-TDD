@@ -1,10 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react'
 import AddingTask from "../AddingTask/AddingTask"
+import TaskList from "../TasksList/TaskList"
 
 function Todo() {
+  const[todos,setTodos] = useState([])
   return (
     <div>
-        <AddingTask/>
+        <AddingTask todos = {todos} setTodos = {setTodos}/>
+        <TaskList/>
     </div>
   )
 }

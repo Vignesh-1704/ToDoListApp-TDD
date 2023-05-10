@@ -1,8 +1,20 @@
-import React from 'react'
+import React, { useState } from 'react'
 
-function AddingTask() {
+function AddingTask({todos,setTodos}) {
+
+  const [todo,setToDo] = useState("")
+
+const handleClear = () => {
+  setTodos();
+  setToDo("")
+}
+
+
   return (
-    <div>AddingTask</div>
+    <div>
+      <input id = "sample_input" type="text" placeholder="Add your Task here." value={todo} onChange={(e)=>setToDo(e.target.value)}></input>
+      <button onClick={()=>handleClear()}>Add</button>
+    </div>
   )
 }
 
